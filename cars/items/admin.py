@@ -18,7 +18,7 @@ class CarBrandAdmin(admin.ModelAdmin):
 
 class CarAdmin(admin.ModelAdmin):
     list_display = ('name', 'brand', 'has_owners')
-    filter_horizontal = ('owners',)  # This instruction does not work properly
+    # filter_horizontal = ('owners',)  # This instruction does not work properly
     search_fields = ['name']
 
 
