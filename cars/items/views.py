@@ -11,6 +11,7 @@ from items.models import CarBrand, Car, Owner
 
 # Create your views here.
 
+
 @api_view(['GET'])
 def api_root(request, format=None):
     return Response({
@@ -32,6 +33,7 @@ class CarViewSet(viewsets.ModelViewSet):
     queryset = Car.objects.all()
     serializer_class = CarSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
 
 class OwnerViewSet(viewsets.ModelViewSet):
 

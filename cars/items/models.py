@@ -12,7 +12,11 @@ class CarBrand(models.Model):
 
     @admin.display(description="Models")
     def get_models(self):
+        """
+        Returns the cars number of that brand
+        """
         return self.cars.count()
+
 
 class Car(models.Model):
     brand = models.ForeignKey(CarBrand, on_delete=models.CASCADE, related_name="cars")
@@ -30,6 +34,9 @@ class Car(models.Model):
         description='Has owners?',
     )
     def has_owners(self):
+        """
+        Returns a boolean that indicates if the car has any owner
+        """
         return self.owners.exists()
 
 
@@ -45,4 +52,7 @@ class Owner(models.Model):
         description='Has cars?',
     )
     def has_cars(self):
+        """
+        Returns a boolean that indicates if the owner has any car
+        """
         return self.cars.exists()
