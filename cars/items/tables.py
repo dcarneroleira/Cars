@@ -1,7 +1,9 @@
 # items/tables.py
 from django.db import models
 import django_tables2 as tables
+
 from .models import Car, Owner
+
 
 class OwnerTable(tables.Table):
     cars = tables.Column(empty_values=())
@@ -15,6 +17,7 @@ class OwnerTable(tables.Table):
         sequence = ("id", "name", "cars", )
         # template_name = "django_tables2/bootstrap.html"
         # fields = ("name", "brand", )
+
 
 class CarTable(tables.Table):
     owners = tables.Column(empty_values=())

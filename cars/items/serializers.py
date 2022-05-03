@@ -38,5 +38,3 @@ class OwnerSerializer(serializers.HyperlinkedModelSerializer):
     def welcome_text(self, owner):
         # return f'Welcome {car.name}'
         return 'Welcome %(name)s' % {'name': owner.name}
-
-    

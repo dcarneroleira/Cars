@@ -27,6 +27,7 @@ class CarAdmin(admin.ModelAdmin):
         ])
     owners_display.short_description = "Owners"
 
+
 class OwnerAdmin(admin.ModelAdmin):
     list_display = ('name', 'has_cars')
     filter_horizontal = ('cars' ,)

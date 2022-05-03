@@ -60,13 +60,14 @@ urlpatterns += [
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
-
-
 '''
+
+
 router = DefaultRouter()
 router.register(r'carbrands', views.CarBrandViewSet, basename="carbrand")
 router.register(r'cars', views.CarViewSet, basename="car")
 router.register(r'owners', views.OwnerViewSet, basename="owner")
+
 
 urlpatterns = [
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
@@ -79,6 +80,8 @@ urlpatterns = [
     ),
     path('listCars/', views.OwnersListView.as_view()),
 ]
+
+
 urlpatterns += [
     path('api-auth/', include('rest_framework.urls')),
 ]
