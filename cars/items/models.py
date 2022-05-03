@@ -5,7 +5,7 @@ from django.contrib import admin
 
 
 class CarBrand(models.Model):
-    name = models.CharField(max_length=150, unique=True)
+    name = models.CharField(max_length=150, unique=True, verbose_name="name")
 
     def __str__(self):
         return self.name
@@ -19,8 +19,8 @@ class CarBrand(models.Model):
 
 
 class Car(models.Model):
-    brand = models.ForeignKey(CarBrand, on_delete=models.CASCADE, related_name="cars")
-    name = models.CharField(max_length=150)
+    brand = models.ForeignKey(CarBrand, on_delete=models.CASCADE, related_name="cars", verbose_name="brand")
+    name = models.CharField(max_length=150, verbose_name="name")
 
     class Meta:
         unique_together = ['brand', 'name']
@@ -40,8 +40,8 @@ class Car(models.Model):
 
 
 class Owner(models.Model):
-    name = models.CharField(max_length=200)
-    cars = models.ManyToManyField(Car, related_name="owners", blank=True)
+    name = models.CharField(max_length=200, verbose_name="name")
+    cars = models.ManyToManyField(Car, related_name="owners", blank=True, verbose_name="cars")
 
     def __str__(self):
         return self.name

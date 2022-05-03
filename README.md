@@ -40,4 +40,14 @@ Run the API:
 ```
 python manage.py runsever
 ```
-After you have the server running you can open Postman(if you have it intalled) and try the collection **Cars API(Test)**
+
+## Testing the API
+After you have the server running, you can open Postman(if you have it intalled) and try the collection **Cars API(Test)**
+
+If you want to try POST, PUT or DELETE; you must create a superuser before.
+
+Run this command and remember your username and password:
+```
+python manage.py createsuperuser
+```
+Once you create your superuser you can create, update and delete instances.

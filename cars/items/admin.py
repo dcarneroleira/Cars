@@ -17,10 +17,15 @@ class CarBrandAdmin(admin.ModelAdmin):
 
 
 class CarAdmin(admin.ModelAdmin):
-    list_display = ('name', 'brand', 'has_owners')
-    # filter_horizontal = ('owners',)  # This instruction does not work properly
+    list_display = ('name', 'brand', 'has_owners', 'owners_display')
+    filter_horizontal = ('owners' ,)  # This instruction does not work properly
     search_fields = ['name']
 
+    def owners_display(self, obj):
+        return ", ".join([
+            owner.name for owner in obj.owners.all()
+        ])
+    owners_display.short_description = "Owners"
 
 class OwnerAdmin(admin.ModelAdmin):
     list_display = ('name', 'has_cars')
