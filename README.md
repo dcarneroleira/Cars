@@ -52,4 +52,8 @@ python manage.py createsuperuser
 ```
 Once you create your superuser you can create, update and delete instances.
 
+<<<<<<< HEAD
 Let's modify same lines
+=======
+Me too!
+>>>>>>> e79ef1dd68600fbf6cc1eb782409ca42e603ff3a
