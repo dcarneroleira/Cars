@@ -51,3 +51,5 @@ Run this command and remember your username and password:
 python manage.py createsuperuser
 ```
 Once you create your superuser you can create, update and delete instances.
+
+Original
